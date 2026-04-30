@@ -1,0 +1,162 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Minimal Navbar */
+.navbar {
+  padding: 1.5rem 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 4rem;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--text-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+/* Page Headers */
+.page-header {
+  margin-bottom: 4rem;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Doctor Cards */
+.doctor-card {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.doctor-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--text-primary);
+  color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.doctor-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-info p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.chevron-icon {
+  color: var(--text-tertiary);
+  transition: transform var(--transition-smooth), color var(--transition-smooth);
+  width: 18px;
+}
+
+.doctor-card:hover .chevron-icon {
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+/* Month Cards */
+.month-card {
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.month-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.month-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.month-card p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  transition: color var(--transition-smooth);
+}
+
+.back-btn:hover {
+  color: var(--text-primary);
+}
