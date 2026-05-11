@@ -278,11 +278,8 @@ export default function CollectionPage() {
 
   if (isLoading) {
     return (
-      <div className="p-6 max-w-7xl mx-auto flex items-center justify-center min-h-[50vh]">
-        <div className="flex flex-col items-center gap-4 text-muted-foreground animate-pulse">
-          <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
-          <p>Loading collection records...</p>
-        </div>
+      <div className="flex h-screen w-full items-center justify-center">
+        <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
       </div>
     );
   }
