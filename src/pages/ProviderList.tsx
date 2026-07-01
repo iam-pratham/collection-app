@@ -313,6 +313,8 @@ export default function CollectionPage() {
                 { name: "Feb 2026", file: "Feb_2026.xlsx" },
                 { name: "March 2026", file: "March_2026.xlsx" },
                 { name: "April 2026", file: "April_2026.xlsx" },
+                { name: "May 2026", file: "May_2026.xlsx" },
+                { name: "June 2026", file: "June_2026.xlsx" },
               ].map((report) => (
                 <a
                   key={report.name}
@@ -408,7 +410,7 @@ export default function CollectionPage() {
                       })}
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">
-                      January – April
+                      January – June
                     </p>
                   </CardContent>
                 </Card>
