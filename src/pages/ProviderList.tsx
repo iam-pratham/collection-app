@@ -435,108 +435,182 @@ export default function CollectionPage() {
                       }}
                       className="h-full w-full"
                     >
-                      <AreaChart
-                        data={monthlyData}
-                        margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
-                      >
-                        <defs>
-                          <linearGradient
-                            id="grossLineGradient"
-                            x1="0"
-                            y1="0"
-                            x2="1"
-                            y2="0"
+                      {monthlyData.length === 1 ? (
+                        <BarChart
+                          data={monthlyData}
+                          margin={{ top: 30, right: 10, left: 0, bottom: 5 }}
+                        >
+                          <CartesianGrid
+                            strokeDasharray="3 3"
+                            vertical={false}
+                            strokeOpacity={0.2}
+                          />
+                          <XAxis
+                            dataKey="month"
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={10}
+                            style={{
+                              fontSize: "12px",
+                              fill: "var(--color-muted-foreground)",
+                            }}
+                          />
+                          <YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={10}
+                            tickFormatter={(val) => `$${val.toLocaleString()}`}
+                            style={{
+                              fontSize: "11px",
+                              fill: "var(--color-muted-foreground)",
+                            }}
+                            domain={[
+                              0,
+                              (dataMax: number) => Math.ceil(dataMax * 1.25),
+                            ]}
+                          />
+                          <ChartTooltip
+                            cursor={{
+                              fill: "var(--color-chart-2)",
+                              opacity: 0.1,
+                            }}
+                            content={<ChartTooltipContent />}
+                          />
+                          <Bar
+                            dataKey="collection"
+                            radius={[4, 4, 0, 0]}
+                            maxBarSize={100}
+                            fill="var(--color-chart-1)"
                           >
-                            <stop
-                              offset="0%"
-                              stopColor="var(--color-chart-1)"
+                            <LabelList
+                              dataKey="collection"
+                              position="top"
+                              content={(props: any) => {
+                                const { x, y, width, value } = props;
+                                if (value == null) return null;
+                                return (
+                                  <text
+                                    x={(x as number) + (width as number) / 2}
+                                    y={(y as number) - 10}
+                                    textAnchor="middle"
+                                    fontSize={12}
+                                    fill="var(--color-chart-1)"
+                                    fontWeight="700"
+                                  >
+                                    $
+                                    {(value as number).toLocaleString(undefined, {
+                                      maximumFractionDigits: 0,
+                                    })}
+                                  </text>
+                                );
+                              }}
                             />
-                            <stop
-                              offset="50%"
-                              stopColor="var(--color-chart-2)"
-                            />
-                            <stop
-                              offset="100%"
-                              stopColor="var(--color-chart-5)"
-                            />
-                          </linearGradient>
-                          <linearGradient
-                            id="grossAreaGradient"
-                            x1="0"
-                            y1="0"
-                            x2="0"
-                            y2="1"
-                          >
-                            <stop
-                              offset="5%"
-                              stopColor="var(--color-chart-2)"
-                              stopOpacity={0.4}
-                            />
-                            <stop
-                              offset="95%"
-                              stopColor="var(--color-chart-2)"
-                              stopOpacity={0}
-                            />
-                          </linearGradient>
-                        </defs>
-                        <CartesianGrid
-                          strokeDasharray="3 3"
-                          vertical={false}
-                          strokeOpacity={0.2}
-                        />
-                        <XAxis
-                          dataKey="month"
-                          tickLine={false}
-                          axisLine={false}
-                          tickMargin={10}
-                          style={{
-                            fontSize: "12px",
-                            fill: "var(--color-muted-foreground)",
-                          }}
-                        />
-                        <YAxis
-                          tickLine={false}
-                          axisLine={false}
-                          tickMargin={10}
-                          tickFormatter={(val) => `$${val.toLocaleString()}`}
-                          style={{
-                            fontSize: "11px",
-                            fill: "var(--color-muted-foreground)",
-                          }}
-                          domain={[
-                            0,
-                            (dataMax: number) => Math.ceil(dataMax * 1.1),
-                          ]}
-                        />
-                        <ChartTooltip
-                          cursor={{
-                            fill: "var(--color-primary)",
-                            opacity: 0.1,
-                          }}
-                          content={<ChartTooltipContent />}
-                        />
-                        <Area
-                          type="monotone"
-                          dataKey="collection"
-                          stroke="url(#grossLineGradient)"
-                          strokeWidth={4}
-                          fillOpacity={1}
-                          fill="url(#grossAreaGradient)"
-                          dot={{
-                            fill: "var(--color-background)",
-                            stroke: "var(--color-chart-2)",
-                            strokeWidth: 2,
-                            r: 4,
-                          }}
-                          activeDot={{
-                            r: 6,
-                            fill: "var(--color-chart-5)",
-                            stroke: "var(--color-background)",
-                            strokeWidth: 2,
-                          }}
-                          animationDuration={1500}
-                        />
-                      </AreaChart>
+                          </Bar>
+                        </BarChart>
+                      ) : (
+                        <AreaChart
+                          data={monthlyData}
+                          margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+                        >
+                          <defs>
+                            <linearGradient
+                              id="grossLineGradient"
+                              x1="0"
+                              y1="0"
+                              x2="1"
+                              y2="0"
+                            >
+                              <stop
+                                offset="0%"
+                                stopColor="var(--color-chart-1)"
+                              />
+                              <stop
+                                offset="50%"
+                                stopColor="var(--color-chart-2)"
+                              />
+                              <stop
+                                offset="100%"
+                                stopColor="var(--color-chart-5)"
+                              />
+                            </linearGradient>
+                            <linearGradient
+                              id="grossAreaGradient"
+                              x1="0"
+                              y1="0"
+                              x2="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="5%"
+                                stopColor="var(--color-chart-2)"
+                                stopOpacity={0.4}
+                              />
+                              <stop
+                                offset="95%"
+                                stopColor="var(--color-chart-2)"
+                                stopOpacity={0}
+                              />
+                            </linearGradient>
+                          </defs>
+                          <CartesianGrid
+                            strokeDasharray="3 3"
+                            vertical={false}
+                            strokeOpacity={0.2}
+                          />
+                          <XAxis
+                            dataKey="month"
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={10}
+                            style={{
+                              fontSize: "12px",
+                              fill: "var(--color-muted-foreground)",
+                            }}
+                          />
+                          <YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={10}
+                            tickFormatter={(val) => `$${val.toLocaleString()}`}
+                            style={{
+                              fontSize: "11px",
+                              fill: "var(--color-muted-foreground)",
+                            }}
+                            domain={[
+                              0,
+                              (dataMax: number) => Math.ceil(dataMax * 1.1),
+                            ]}
+                          />
+                          <ChartTooltip
+                            cursor={{
+                              fill: "var(--color-primary)",
+                              opacity: 0.1,
+                            }}
+                            content={<ChartTooltipContent />}
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="collection"
+                            stroke="url(#grossLineGradient)"
+                            strokeWidth={4}
+                            fillOpacity={1}
+                            fill="url(#grossAreaGradient)"
+                            dot={{
+                              fill: "var(--color-background)",
+                              stroke: "var(--color-chart-2)",
+                              strokeWidth: 2,
+                              r: 4,
+                            }}
+                            activeDot={{
+                              r: 6,
+                              fill: "var(--color-chart-5)",
+                              stroke: "var(--color-background)",
+                              strokeWidth: 2,
+                            }}
+                            animationDuration={1500}
+                          />
+                        </AreaChart>
+                      )}
                     </ChartContainer>
                   </CardContent>
                 </Card>
