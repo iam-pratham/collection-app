@@ -105,6 +105,8 @@ export default function CollectionPage() {
           else if (key === "ANDY KOSER,PT") niceName = "Andy Koser - PT";
           else if (key === "MARIANNE DECASTRO,PT") niceName = "Marianne Decastro - PT";
           else if (key === "Micheal Kelly") niceName = "Michael Kelly - Chiro";
+          else if (key === "GABRIEL NADEL,DC") niceName = "Gabriel Nadel - Chiro";
+          else if (key === "John Saracco") niceName = "John Saracco - OT";
           collectionProviders.add(niceName);
         }
       });
