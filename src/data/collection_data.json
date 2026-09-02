@@ -188,20 +188,34 @@
     "BILLY FORD,MD": 125.71
   },
   {
+    "__EMPTY": "Aug-26",
+    "Jay Brecker": 28135.77,
+    "Monroe Castro": 15172.66,
+    "MARIANNE DECASTRO,PT": 62.73,
+    "Micheal Kelly": 3870.42,
+    "Bruce J Buckman,DPT": 31941.25,
+    "Peter J Berger,DC": 47772.84,
+    "GABRIEL NADEL,DC": 23920.88,
+    "John Saracco": 23463.38,
+    "Christian Gartner": 710.93,
+    "Madison Smith": 3801.83,
+    "DAVID ADIN,DO - PAIN MGMT": 44682.71
+  },
+  {
     "__EMPTY": "Total",
-    "Bruce J Buckman,DPT": 309326.29,
-    "Peter J Berger,DC": 565572.29,
-    "Madison Smith": 146784.55,
-    "Christian Gartner": 138157.36,
-    "Jay Brecker": 289687.82,
-    "Monroe Castro": 125362.98,
+    "Bruce J Buckman,DPT": 341267.54,
+    "Peter J Berger,DC": 613345.13,
+    "Madison Smith": 150586.38,
+    "Christian Gartner": 138868.29,
+    "Jay Brecker": 317823.59,
+    "Monroe Castro": 140535.64,
     "BILLY FORD,MD": 3890.51,
-    "DAVID ADIN,DO - PAIN MGMT": 503576.87,
+    "DAVID ADIN,DO - PAIN MGMT": 548259.58,
     "SRIDHAR YALAMANCHILI,PT": 6429.71,
     "ANDY KOSER,PT": 2957.63,
-    "MARIANNE DECASTRO,PT": 457.26,
-    "Micheal Kelly": 47668.33,
-    "GABRIEL NADEL,DC": 30322.44,
-    "John Saracco": 16721.47
+    "MARIANNE DECASTRO,PT": 519.99,
+    "Micheal Kelly": 51538.75,
+    "GABRIEL NADEL,DC": 54243.32,
+    "John Saracco": 40184.85
   }
 ]
