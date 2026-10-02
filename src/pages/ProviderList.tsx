@@ -204,6 +204,7 @@ export default function CollectionPage() {
       "Q4 2025": 0,
       "Q1 2026": 0,
       "Q2 2026": 0,
+      "Q3 2026": 0,
     };
 
     const pMap: Record<string, number> = {};
@@ -254,6 +255,7 @@ export default function CollectionPage() {
         } else if (yy === "26") {
           if (mNum >= 1 && mNum <= 3) quartersMap["Q1 2026"] += monthlyAgg;
           if (mNum >= 4 && mNum <= 6) quartersMap["Q2 2026"] += monthlyAgg;
+          if (mNum >= 7 && mNum <= 9) quartersMap["Q3 2026"] += monthlyAgg;
         }
 
         mData.push({ month: rawMonth, collection: monthlyAgg });
@@ -317,6 +319,9 @@ export default function CollectionPage() {
                 { name: "April 2026", file: "April_2026.xlsx" },
                 { name: "May 2026", file: "May_2026.xlsx" },
                 { name: "June 2026", file: "June_2026.xlsx" },
+                { name: "July 2026", file: "July_2026.xlsx" },
+                { name: "August 2026", file: "August_2026.xlsx" },
+                { name: "September 2026", file: "September_2026.xlsx" },
               ].map((report) => (
                 <a
                   key={report.name}
@@ -412,7 +417,7 @@ export default function CollectionPage() {
                       })}
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">
-                      January – June
+                      January – September
                     </p>
                   </CardContent>
                 </Card>
